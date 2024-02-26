@@ -187,7 +187,7 @@ impl Gene {
     /// gene1.mutate();
     /// ```
     pub fn mutate(&mut self) {
-        let mutation_type = mutation::get_mutation_type();
+        let mutation_type = MutationType::get_mutation_type();
         let target = thread_rng().gen_range(0, self.markers.len());
         match mutation_type {
             MutationType::DELETE => self.set_marker(target, 0 as f32),
